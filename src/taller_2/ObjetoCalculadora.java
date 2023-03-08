@@ -1,5 +1,7 @@
 package taller_2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sebas
@@ -7,40 +9,52 @@ package taller_2;
 public class ObjetoCalculadora {
     //atrivutos de la clase
 
-    public int numero1;
-    public int numero2;
-    public int resultado;
+    private int numero1;
+    private int numero2;
+    private int resultado;
     //metodo constructor
 
     public ObjetoCalculadora() {
-        super();
+        //resultado = 0;
     }
-
-    //metodos de operaciones
+    
+    //metodos para operar los numeros ingresados
     public int calcularSuma() {
-        resultado = 0;
-        resultado = numero1 + numero2;
-        return (resultado);
+        return (resultado = numero1 + numero2);
     }
 
     public int calcularResta() {
-        resultado = 0;
-        resultado = numero1 - numero2;
-        return (resultado);
+        return (resultado = numero1 - numero2);
     }
 
     public int calcularMultiplicacion() {
-        resultado = 0;
-        resultado = numero1 * numero2;
-        return (resultado);
+        return (resultado = numero1 * numero2);
     }
 
     public int calcularDivision() {
-        resultado = 0;
         if (numero2 != 0) {
             resultado = numero1 / numero2;
         }
         return (resultado);
     }
 
+    public void setNumero1(int numero1) {
+        if (numero1>0){
+            this.numero1 = numero1;
+        }
+    }
+
+    public void setNumero2(int numero2) {
+        if (numero2>0){
+            this.numero2 = numero2;
+        }
+    }
+    
+    
+    public void resultado(){
+       JOptionPane.showMessageDialog(null, "suma: "+ calcularSuma());
+       JOptionPane.showMessageDialog(null, "resta: "+ calcularResta());
+       JOptionPane.showMessageDialog(null, "multiplicacion: "+ calcularMultiplicacion());
+       JOptionPane.showMessageDialog(null, "division: "+ calcularDivision());
+    }
 }
