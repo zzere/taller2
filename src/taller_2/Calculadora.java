@@ -1,5 +1,4 @@
 package taller_2;
-import javax.swing.JOptionPane;
 
 /**
  *

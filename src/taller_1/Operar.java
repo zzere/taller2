@@ -29,7 +29,6 @@ public class Operar {
     
     public String mostrarR(){
         return "el area del cuadrado es: "+resultado1+"\nel area del circulo es: "+resultado2;
-        
     }
     
 }
