@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * @author sebas
  */
 public class ObjetoCalculadora {
-    //atrivutos de la clase
+    //atributos de la clase
 
     private int numero1;
     private int numero2;
@@ -15,46 +15,53 @@ public class ObjetoCalculadora {
     //metodo constructor
 
     public ObjetoCalculadora() {
-        //resultado = 0;
+        resultado = 0;
     }
     
     //metodos para operar los numeros ingresados
-    public int calcularSuma() {
+    private int calcularSuma() {
         return (resultado = numero1 + numero2);
     }
 
-    public int calcularResta() {
+    private int calcularResta() {
         return (resultado = numero1 - numero2);
     }
 
-    public int calcularMultiplicacion() {
+    private int calcularMultiplicacion() {
         return (resultado = numero1 * numero2);
     }
 
-    public int calcularDivision() {
+    private int calcularDivision() {
         if (numero2 != 0) {
             resultado = numero1 / numero2;
         }
         return (resultado);
     }
 
-    public void setNumero1(int numero1) {
-        if (numero1>0){
-            this.numero1 = numero1;
-        }
+    public void setNumero1() {
+        do{
+            numero1 = Integer.parseInt(JOptionPane.showInputDialog("digite numero 1"));
+        }while(numero1<=0);
     }
 
-    public void setNumero2(int numero2) {
-        if (numero2>0){
-            this.numero2 = numero2;
-        }
+    public void setNumero2() {
+       do{
+           numero2 = Integer.parseInt(JOptionPane.showInputDialog("digite numero 2"));
+       }while(numero2<=0);
     }
     
     
-    public void resultado(){
+    public void resultadoSuma(){
        JOptionPane.showMessageDialog(null, "suma: "+ calcularSuma());
-       JOptionPane.showMessageDialog(null, "resta: "+ calcularResta());
-       JOptionPane.showMessageDialog(null, "multiplicacion: "+ calcularMultiplicacion());
-       JOptionPane.showMessageDialog(null, "division: "+ calcularDivision());
+    }
+    
+    public void resultadoResta(){
+         JOptionPane.showMessageDialog(null, "resta: "+ calcularResta());
+    }
+    public void resultadoMultiplicacion(){
+        JOptionPane.showMessageDialog(null, "multiplicacion: "+ calcularMultiplicacion());
+    }
+    public void resultadoDivision(){
+        JOptionPane.showMessageDialog(null, "division: "+ calcularDivision());
     }
 }
